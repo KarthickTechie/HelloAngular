@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  name="citizen";
+  username:string='John';
+  items=['ball','coke','water']
+  constructor() { 
+   
+  }
 
   ngOnInit() {
+  }
+
+  onInput(val){
+    console.log(val.target.value)
+    this.username = val.target.value;
   }
 
 }

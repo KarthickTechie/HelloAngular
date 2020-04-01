@@ -5,8 +5,6 @@ import { HttpModule } from '@angular/http';
 import {Route,RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
-import { HomeComponent } from './home/home.component';
 import { VenusuiModule } from './venusui/venusui.module';
 
 const route:Route[] = [
@@ -18,13 +16,13 @@ const route:Route[] = [
   {path:'home',loadChildren:'./home/home.module#HomeModule'},
   {path:'admin',loadChildren:'./admin/admin.module#AdminModule'},
   {path:'funny',loadChildren:'./funny/funny.module#FunnyModule'},
-
+  {path:'applications',loadChildren:'./applications/applications.module#ApplicationsModule'}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

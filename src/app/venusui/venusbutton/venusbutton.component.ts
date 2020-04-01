@@ -9,6 +9,8 @@ export class VenusbuttonComponent implements OnInit {
 
   @Input()color:string;
   @Input()cornor:string;
+  @Input()size:string;
+
   constructor() {
 
    }
