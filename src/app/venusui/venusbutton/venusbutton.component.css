@@ -1,13 +1,14 @@
 .venus-btn{
     padding: 5px;
     max-width: 100px;
-    min-width: 50px;
+    min-width: 70px;
     height: auto;
     background: #1a73e8;
     color: white;
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
+    border-width: 0;
 }
 
 .primary{
@@ -33,4 +34,9 @@
 .flat{
     border-radius: 5px;
 
+}
+
+.disabled{
+    pointer-events: none;
+    background: rgb(199, 195, 195) !important;
 }

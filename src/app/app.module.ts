@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {Route,RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
-import { HomeComponent } from './home/home.component';
 import { VenusuiModule } from './venusui/venusui.module';
+import { ProductsComponent } from './products/products.component';
+
+// route configuration 
 
 const route:Route[] = [
   {
@@ -18,17 +18,19 @@ const route:Route[] = [
   {path:'home',loadChildren:'./home/home.module#HomeModule'},
   {path:'admin',loadChildren:'./admin/admin.module#AdminModule'},
   {path:'funny',loadChildren:'./funny/funny.module#FunnyModule'},
+  {path:'products',loadChildren:'./products/products.module#ProductsModule'}
 
 ];
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
     VenusuiModule,
     RouterModule.forRoot(route)

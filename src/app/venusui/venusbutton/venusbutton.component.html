@@ -1,10 +1,11 @@
-<div
+<button
 class="venus-btn"
 [class.round]="cornor=='round'"
 [class.flat]="cornor=='flat'"
 [style.background]="color"
+[class.disabled]="disabled"
 >
   <ng-content>
 
   </ng-content>
-</div>
+</button>
