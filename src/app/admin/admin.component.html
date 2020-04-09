@@ -1,23 +1,30 @@
 <div class="container">
 
     <venus-simpletitlecontainer [title]="'Admin Login'">
-        <form>
+        <form [formGroup]="loginform" (ngSubmit)="login()">
 
              <div class="form-group">
                     <label for="kyc">Enter Your Name</label>
                   
-                        <input type="text" class="form-control">
-
+                        <input formControlName="username" type="text" class="form-control">
+                        <small class="error-txt" *ngIf="_get('username').touched && _get('username').errors">
+                            username is required
+                        </small>
              </div>
 
              <div class="form-group">
-                    <label for="kyc">Enter Any KYC</label>
+                    <label for="kyc">Pan</label>
                   
-                        <input type="text" class="form-control">
+                        <input formControlName="pan" type="text" class="form-control">
+
+                        <small class="error-txt" *ngIf="_get('pan').touched && _get('pan').errors">
+                            PAN number is required
+                        </small>
+                        
 
              </div>
 
-            <venusbutton [color]="'green'" [cornor]="'round'">
+            <venusbutton [disabled]="loginform.invalid" [color]="'green'" [cornor]="'round'">
                 Submit
             </venusbutton>
         </form>

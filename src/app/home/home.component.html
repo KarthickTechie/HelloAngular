@@ -6,17 +6,18 @@
                  <div class="form-group">
                         <label for="kyc">Enter Your Name</label>
                       
-                            <input formControlName="username" type="text" class="form-control" [value]="user">
+                            <input formControlName="username" type="text" class="form-control" #username>
                             <small 
                             *ngIf="_get('username').touched && _get('username').errors">
                                 username is required.
                             </small>
                            
+                           
                  </div>
     
                  <div class="form-group">
                         <label for="kyc">Enter Any KYC
-                           
+                        
                         </label>
                       
                         <input formControlName="kyc" type="text" class="form-control" >
