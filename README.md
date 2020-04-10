@@ -32,4 +32,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ng generate component ComponentName  - generate component 
 
-ng generate 
+## generate a directive 
+
+ng g directive directive/nonumber 
+
+## generate a pipe
+
+ng g pipe pipe/superfilter

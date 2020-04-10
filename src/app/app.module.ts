@@ -5,7 +5,7 @@ import {Route,RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { VenusuiModule } from './venusui/venusui.module';
-import { ProductsComponent } from './products/products.component';
+import { IndiancurrencyPipe } from './pipes/indiancurrency.pipe';
 
 // route configuration 
 
@@ -18,7 +18,9 @@ const route:Route[] = [
   {path:'home',loadChildren:'./home/home.module#HomeModule'},
   {path:'admin',loadChildren:'./admin/admin.module#AdminModule'},
   {path:'funny',loadChildren:'./funny/funny.module#FunnyModule'},
-  {path:'products',loadChildren:'./products/products.module#ProductsModule'}
+  {path:'products',loadChildren:'./products/products.module#ProductsModule'},
+  {path:'applications',loadChildren:'./applications/applications.module#ApplicationsModule'}
+
 
 ];
 
@@ -28,6 +30,7 @@ const route:Route[] = [
   declarations: [
     AppComponent,
     NavbarComponent,
+    IndiancurrencyPipe,
   ],
   imports: [
     BrowserModule,

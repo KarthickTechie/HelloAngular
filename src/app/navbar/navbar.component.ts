@@ -1,14 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { DatacenterService } from 'app/services/datacenter.service';
 
 @Component({
   selector: 'navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
+  providers:[DatacenterService]
+
 })
 export class NavbarComponent implements OnInit {
 
-  user = "Arnold"
-  constructor() { }
+  notSubmittedCount:number;
+  constructor(private dataCenter:DatacenterService) { 
+
+    this.notSubmittedCount = this.dataCenter.getNotSubmittedApplicationCount()
+
+    window.addEventListener('submitted',()=>{
+      this.notSubmittedCount--;
+    })
+  }
 
   ngOnInit() {
   }

@@ -40,3 +40,8 @@
     pointer-events: none;
     background: rgb(199, 195, 195) !important;
 }
+
+.small{
+    font-size: 12px;
+    padding:4px 10px;
+}

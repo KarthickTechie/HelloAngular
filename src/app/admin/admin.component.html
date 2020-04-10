@@ -1,12 +1,15 @@
 <div class="container">
 
-    <venus-simpletitlecontainer [title]="'Admin Login'">
+    <h4>Today : {{today | date:"MM/dd/yy"}}</h4>   
+
+    <venus-simpletitlecontainer [title]="'Admin Login' | lowercase">
         <form [formGroup]="loginform" (ngSubmit)="login()">
 
              <div class="form-group">
                     <label for="kyc">Enter Your Name</label>
                   
-                        <input formControlName="username" type="text" class="form-control">
+                        <input nonumber quickdelete formControlName="username" type="text" class="form-control">
+                        
                         <small class="error-txt" *ngIf="_get('username').touched && _get('username').errors">
                             username is required
                         </small>
@@ -15,7 +18,7 @@
              <div class="form-group">
                     <label for="kyc">Pan</label>
                   
-                        <input formControlName="pan" type="text" class="form-control">
+                        <input quickdelete formControlName="pan" type="text" class="form-control">
 
                         <small class="error-txt" *ngIf="_get('pan').touched && _get('pan').errors">
                             PAN number is required
@@ -34,3 +37,5 @@
    
 
 </div>
+
+

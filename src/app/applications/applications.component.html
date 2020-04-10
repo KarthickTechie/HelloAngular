@@ -1,0 +1,41 @@
+<div>
+ 
+
+  <venus-simplelist>
+      <div class="row container m-8" style="margin-bottom: 1em;
+      width: 100% !important;">
+          <input class="form-control" 
+          id="myInput" 
+          type="text" 
+          [value]="query"
+          (input)="search($event.target.value)"
+          placeholder="Search..">
+      
+      </div>
+    <venus-simplelistitem *ngFor="let application of applications| superfilter:query;">
+     
+      <p><B>name : </B>{{application.name}}</p>
+      <p style="margin-left:1em"><B>Loan Amount : </B>{{application.loanamount}}</p>
+      <p style="margin-left:1em">
+        <B>Staus : 
+          <span 
+          
+          [style.color]="application.status=='submitted' ? 'green' : 'red' ">{{application.status}}</span>
+        </B>
+      </p>
+      
+      <venusbutton 
+      *ngIf="application.status=='notsubmitted'"
+      style="position: absolute;right:10%"
+      [color]="'green'" [cornor]="'flat'" [size]="'small'"
+      (click)="onClickSubmitBtn(application)"
+      >
+          Submit
+      </venusbutton>
+    </venus-simplelistitem>
+  </venus-simplelist>
+
+  
+
+
+</div>
